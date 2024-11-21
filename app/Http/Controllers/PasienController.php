@@ -15,12 +15,6 @@ class PasienController extends Controller
         return view('Dashboard.admin-role.data-pasien', compact('pasiens'));
     }
 
-    public function showNomorAntrian()
-    {
-    $pasiens = Pasien::all(); // Mengambil semua data pasien
-    return view('Dashboard.admin-role.nomor-antrian', compact('pasiens'));
-    }
-
     // Menampilkan form untuk menambah pasien baru
     public function create()
     {

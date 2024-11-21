@@ -1,80 +1,100 @@
 @extends('layouts.base-app')
 
-@section('title', 'celender')
+@section('title', 'alat bantu')
 
 @section('content')
-<div id='calendar'></div>
 
-<div class="p-5">
-  <h2 class="mb-4">Full Calendar</h2>
-  <div class="card">
-    <div class="card-body p-0">
-      <div id="calendar"></div>
+{{-- map --}}
+<div class="card w-50 p-3">
+    <div class="card-body">
+      <h5 class="card-title">Maps</h5>
     </div>
+  <div class="ratio ratio-16x9">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117996.95037632967!2d-74.05953969406828!3d40.75468158321536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2588f046ee661%3A0xa0b3281fcecc08c!2sManhattan%2C%20Nowy%20Jork%2C%20Stany%20Zjednoczone!5e1!3m2!1spl!2spl!4v1672242444695!5m2!1spl!2spl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </div>
 
-<!-- calendar modal -->
-<div id="modal-view-event" class="modal modal-top fade calendar-modal">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<div class="modal-body">
-					<h4 class="modal-title"><span class="event-icon"></span><span class="event-title"></span></h4>
-					<div class="event-body"></div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
+{{-- geolocation --}}
+<div class="card w-50 p-3">
+  <div class="card-body">
+    <h5 class="card-title">geolocation</h5>
+  </div>
+<div class="geolocation-container">
+  <button id="getLocationBtn">Get My Location</button>
+  <p id="location"></p>
+</div>
+</div>
 
-<div id="modal-view-event-add" class="modal modal-top fade calendar-modal">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <form id="add-event">
-        <div class="modal-body">
-        <h4>Add Event Detail</h4>        
-          <div class="form-group">
-            <label>Event name</label>
-            <input type="text" class="form-control" name="ename">
-          </div>
-          <div class="form-group">
-            <label>Event Date</label>
-            <input type='text' class="datetimepicker form-control" name="edate">
-          </div>        
-          <div class="form-group">
-            <label>Event Description</label>
-            <textarea class="form-control" name="edesc"></textarea>
-          </div>
-          <div class="form-group">
-            <label>Event Color</label>
-            <select class="form-control" name="ecolor">
-              <option value="fc-bg-default">fc-bg-default</option>
-              <option value="fc-bg-blue">fc-bg-blue</option>
-              <option value="fc-bg-lightgreen">fc-bg-lightgreen</option>
-              <option value="fc-bg-pinkred">fc-bg-pinkred</option>
-              <option value="fc-bg-deepskyblue">fc-bg-deepskyblue</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Event Icon</label>
-            <select class="form-control" name="eicon">
-              <option value="circle">circle</option>
-              <option value="cog">cog</option>
-              <option value="group">group</option>
-              <option value="suitcase">suitcase</option>
-              <option value="calendar">calendar</option>
-            </select>
-          </div>        
-      </div>
-        <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" >Save</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>        
-      </div>
-      </form>
-    </div>
+
+{{-- kalkulator --}}
+<div class="card w-50 p-3">
+  <div class="card-body">
+    <h5 class="card-title">calculator</h5>
+  </div>
+<div class="calculator">
+  <input type="text" id="display" readonly>
+  <div class="buttons">
+    <button onclick="appendNumber('9')">9</button>
+    <button onclick="appendNumber('8')">8</button>
+    <button onclick="appendNumber('7')">7</button>
+    <button onclick="appendNumber('6')">6</button>
+    <button onclick="appendNumber('5')">5</button>
+    <button onclick="appendNumber('4')">4</button>
+    <button onclick="appendNumber('3')">3</button>
+    <button onclick="appendNumber('2')">2</button>
+    <button onclick="appendNumber('1')">1</button>
+    <button onclick="clearDisplay()">C</button>
+    <button onclick="appendNumber('0')">0</button>
+    <button onclick="appendOperator('-')">-</button>
+    <button onclick="appendOperator('*')">*</button>
+    <button onclick="appendOperator('+')">+</button>
+    <button onclick="appendOperator('/')">/</button>
+    <button onclick="calculateResult()">=</button> 
   </div>
 </div>
+</div>
+
+{{-- stop wacth --}}
+<div class="card w-50 p-3">
+  <div class="card-body">
+    <h5 class="card-title"></h5>Stopwatch
+  </div>
+<div class="timer-container">
+  <p id="timer">00:00:00</p>
+  <button id="startBtn">Start</button>
+  <button id="stopBtn" disabled>Stop</button>
+  <button id="resetBtn" disabled>Reset</button>
+</div>
+</div>
+
+{{-- Countdown Timer --}}
+<div class="card w-50 p-3">
+  <div class="card-body">
+    <h5 class="card-title">Countdown Timer</h5>
+  </div>
+  <div class="countdown-input">
+    <label for="hours">Hours:</label>
+    <input type="number" id="hours" value="0">
+    <label for="minutes">Minutes:</label>
+    <input type="number" id="minutes" value="5">
+    <label for="seconds">Seconds:</label>
+    <input type="number" id="seconds" value="0">
+    <button id="startCountdown">Start Countdown</button>
+  </div>
+  <p id="countdownDisplay">00:00:00</p>      
+</div>
+
+
+{{-- random quote --}}
+<div class="card w-50 p-3">
+  <div class="card-body">
+    <h5 class="card-title">Inspirational Quote</h5>
+  </div>
+<div class="quote-container">
+  <p id="quote">"Click the button to get inspired!"</p>
+  <button id="newQuoteBtn">Get New Quote</button>
+</div>
+</div>
+
 
 @endsection

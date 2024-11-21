@@ -18,14 +18,6 @@ class DokterController extends Controller
         $dokters = Dokter::all();
         return view('Dashboard.admin-role.dokters', compact('dokters'));
     }
-
-
-    public function showNomorAntrian()
-    {
-    $dokters = Dokter::all(); // Mengambil semua data pasien
-    return view('Dashboard.admin-role.nomor-antrian', compact('dokters'));
-    }
-
     // menampilkan data untuk user
     public function showForUser()
    {
