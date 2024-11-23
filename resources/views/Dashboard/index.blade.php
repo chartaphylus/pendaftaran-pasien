@@ -7,15 +7,15 @@
     <div class="slideshow-container">
         <!-- Slide 1 -->
         <div class="slide fade">
-            <img src="https://wallpaperaccess.com/full/271954.jpg" alt="Slide 1">
+            <img src="https://p.turbosquid.com/ts-thumb/QT/hb6js2/yH/01/jpg/1688206834/1920x1080/fit_q87/a5405f7ff1a23297c1d16f1417c9b43ca0e2db4d/01.jpg" alt="Slide 1">
         </div>
         <!-- Slide 2 -->
         <div class="slide fade">
-            <img src="https://wallpaperaccess.com/full/324155.jpg" alt="Slide 2">
+            <img src="https://www.sfdmed.com/d/images/yingyong/Hospital-bed-3.jpg" alt="Slide 2">
         </div>
         <!-- Slide 3 -->
         <div class="slide fade">
-            <img src="https://wallpaperaccess.com/full/24559.jpg" alt="Slide 3">
+            <img src="https://www.noblehospital.co/images/ot-image.jpg" alt="Slide 3">
         </div>
         <!-- Tombol Navigasi -->
         <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
