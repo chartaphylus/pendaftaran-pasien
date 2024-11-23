@@ -1,4 +1,4 @@
-<li class="sidebar-item {{ Route::currentRouteName() === 'user.index' ? 'active' : '' }}">
+<li class="sidebar-item">
     <a href="{{ route('user.index') }}" class="sidebar-link">
         <i class="bi bi-grid-fill">
         </i>
@@ -19,7 +19,7 @@
         <span>daftar dokter</span>
     </a>
 </li>
-<li class="sidebar-item active">
+<li class="sidebar-item">
     <a href="{{route('user.celender')}}" class="sidebar-link">
         <i class="bi bi-calendar-event">
         </i>

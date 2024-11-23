@@ -172,7 +172,7 @@
             <button type="submit">Simpan Perubahan</button>
 
             <div class="form-actions">
-                <a href="{{ route('pasiens.index') }}">Kembali</a>
+                <a href="{{ route('admin.data-pasien') }}">Kembali</a>
             </div>
         </form>
     </div>
