@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="user-img d-flex align-items-center">
                                     <div class="avatar avatar-md">
-                                        <img src="images/logo.png" alt="User Avatar">
+                                        <img src="{{asset('images/logo.png')}}" alt="User Avatar">
                                     </div>
                                 </div>
                             </div>

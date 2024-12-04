@@ -15,7 +15,7 @@
 </div>
 
 {{-- geolocation --}}
-<div class="card w-50 p-3">
+{{-- <div class="card w-50 p-3">
   <div class="card-body">
     <h5 class="card-title">geolocation</h5>
   </div>
@@ -23,11 +23,11 @@
   <button id="getLocationBtn">Get My Location</button>
   <p id="location"></p>
 </div>
-</div>
+</div> --}}
 
 
 {{-- kalkulator --}}
-<div class="card w-50 p-3">
+{{-- <div class="card w-50 p-3">
   <div class="card-body">
     <h5 class="card-title">calculator</h5>
   </div>
@@ -52,10 +52,10 @@
     <button onclick="calculateResult()">=</button> 
   </div>
 </div>
-</div>
+</div> --}}
 
 {{-- stop wacth --}}
-<div class="card w-50 p-3">
+{{-- <div class="card w-50 p-3">
   <div class="card-body">
     <h5 class="card-title"></h5>Stopwatch
   </div>
@@ -65,10 +65,10 @@
   <button id="stopBtn" disabled>Stop</button>
   <button id="resetBtn" disabled>Reset</button>
 </div>
-</div>
+</div> --}}
 
 {{-- Countdown Timer --}}
-<div class="card w-50 p-3">
+{{-- <div class="card w-50 p-3">
   <div class="card-body">
     <h5 class="card-title">Countdown Timer</h5>
   </div>
@@ -82,11 +82,11 @@
     <button id="startCountdown">Start Countdown</button>
   </div>
   <p id="countdownDisplay">00:00:00</p>      
-</div>
+</div> --}}
 
 
 {{-- random quote --}}
-<div class="card w-50 p-3">
+{{-- <div class="card w-50 p-3">
   <div class="card-body">
     <h5 class="card-title">Inspirational Quote</h5>
   </div>
@@ -94,6 +94,6 @@
   <p id="quote">"Click the button to get inspired!"</p>
   <button id="newQuoteBtn">Get New Quote</button>
 </div>
-</div>
+</div> --}}
 
 @endsection

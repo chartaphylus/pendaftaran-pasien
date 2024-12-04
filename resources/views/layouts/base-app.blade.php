@@ -147,7 +147,7 @@
 }
 
 /* kalkulator */
-.calculator {
+/* .calculator {
   width: 200px;
   margin: 20px auto;
   text-align: center;
@@ -166,10 +166,10 @@
   margin: 5px;
   font-size: 1.2rem;
   cursor: pointer;
-}
+} */
 
 /* stop watch */
-.timer-container {
+/* .timer-container {
   text-align: center;
   padding: 20px;
 }
@@ -193,10 +193,10 @@ button {
 button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
-}
+} */
 
 /* random quote */
-.quote-container {
+/* .quote-container {
   text-align: center;
   padding: 20px;
   background: #f4f4f9;
@@ -223,9 +223,9 @@ button {
 
 button:hover {
   background-color: #218838;
-}
+} */
 /* countdown timer */
-.countdown-input {
+/* .countdown-input {
   text-align: center;
   padding: 20px;
 }
@@ -247,10 +247,10 @@ button {
 
 button:hover {
   background-color: #218838;
-}
+} */
 
 /* geolocation */
-.geolocation-container {
+/* .geolocation-container {
   text-align: center;
   padding: 20px;
   background: #f4f4f9;
@@ -270,10 +270,10 @@ button {
 
 button:hover {
   background-color: #0056b3;
-}
+} */
 
 /* animation text */
-@keyframes slideIn {
+/* @keyframes slideIn {
   from {
     transform: translateX(-100%);
     opacity: 0;
@@ -282,7 +282,7 @@ button:hover {
     transform: translateX(0);
     opacity: 3;
   }
-}
+} */
 
 
     </style>
@@ -423,127 +423,127 @@ setInterval(() => {
 
 
 // calculator
-let expression = "";
+// let expression = "";
 
-function appendNumber(number) {
-  expression += number;
-  document.getElementById("display").value = expression;
-}
+// function appendNumber(number) {
+//   expression += number;
+//   document.getElementById("display").value = expression;
+// }
 
-function appendOperator(operator) {
-  expression += ` ${operator} `;
-  document.getElementById("display").value = expression;
-}
+// function appendOperator(operator) {
+//   expression += ` ${operator} `;
+//   document.getElementById("display").value = expression;
+// }
 
-function clearDisplay() {
-  expression = "";
-  document.getElementById("display").value = "";
-}
+// function clearDisplay() {
+//   expression = "";
+//   document.getElementById("display").value = "";
+// }
 
-function calculateResult() {
-  try {
-    const result = eval(expression);
-    document.getElementById("display").value = result;
-    expression = result.toString();
-  } catch {
-    document.getElementById("display").value = "Error";
-    expression = "";
-  }
-}
+// function calculateResult() {
+//   try {
+//     const result = eval(expression);
+//     document.getElementById("display").value = result;
+//     expression = result.toString();
+//   } catch {
+//     document.getElementById("display").value = "Error";
+//     expression = "";
+//   }
+// }
 
 // stop watch
-let timerInterval;
-let seconds = 0;
+// let timerInterval;
+// let seconds = 0;
 
-const timerDisplay = document.getElementById("timer");
-const startBtn = document.getElementById("startBtn");
-const stopBtn = document.getElementById("stopBtn");
-const resetBtn = document.getElementById("resetBtn");
+// const timerDisplay = document.getElementById("timer");
+// const startBtn = document.getElementById("startBtn");
+// const stopBtn = document.getElementById("stopBtn");
+// const resetBtn = document.getElementById("resetBtn");
 
-function updateTimer() {
-  const hrs = String(Math.floor(seconds / 3600)).padStart(2, '0');
-  const mins = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
-  const secs = String(seconds % 60).padStart(2, '0');
-  timerDisplay.textContent = `${hrs}:${mins}:${secs}`;
-}
+// function updateTimer() {
+//   const hrs = String(Math.floor(seconds / 3600)).padStart(2, '0');
+//   const mins = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+//   const secs = String(seconds % 60).padStart(2, '0');
+//   timerDisplay.textContent = `${hrs}:${mins}:${secs}`;
+// }
 
-startBtn.addEventListener("click", () => {
-  timerInterval = setInterval(() => {
-    seconds++;
-    updateTimer();
-  }, 1000);
-  startBtn.disabled = true;
-  stopBtn.disabled = false;
-  resetBtn.disabled = false;
-});
+// startBtn.addEventListener("click", () => {
+//   timerInterval = setInterval(() => {
+//     seconds++;
+//     updateTimer();
+//   }, 1000);
+//   startBtn.disabled = true;
+//   stopBtn.disabled = false;
+//   resetBtn.disabled = false;
+// });
 
-stopBtn.addEventListener("click", () => {
-  clearInterval(timerInterval);
-  startBtn.disabled = false;
-  stopBtn.disabled = true;
-});
+// stopBtn.addEventListener("click", () => {
+//   clearInterval(timerInterval);
+//   startBtn.disabled = false;
+//   stopBtn.disabled = true;
+// });
 
-resetBtn.addEventListener("click", () => {
-  clearInterval(timerInterval);
-  seconds = 0;
-  updateTimer();
-  startBtn.disabled = false;
-  stopBtn.disabled = true;
-  resetBtn.disabled = true;
-});
+// resetBtn.addEventListener("click", () => {
+//   clearInterval(timerInterval);
+//   seconds = 0;
+//   updateTimer();
+//   startBtn.disabled = false;
+//   stopBtn.disabled = true;
+//   resetBtn.disabled = true;
+// });
 
 // countdown timer
-document.getElementById("startCountdown").addEventListener("click", function() {
-  let hours = parseInt(document.getElementById("hours").value);
-  let minutes = parseInt(document.getElementById("minutes").value);
-  let seconds = parseInt(document.getElementById("seconds").value);
+// document.getElementById("startCountdown").addEventListener("click", function() {
+//   let hours = parseInt(document.getElementById("hours").value);
+//   let minutes = parseInt(document.getElementById("minutes").value);
+//   let seconds = parseInt(document.getElementById("seconds").value);
 
-  let totalSeconds = hours * 3600 + minutes * 60 + seconds;
+//   let totalSeconds = hours * 3600 + minutes * 60 + seconds;
 
-  const countdownInterval = setInterval(function() {
-    if (totalSeconds <= 0) {
-      clearInterval(countdownInterval);
-      document.getElementById("countdownDisplay").textContent = "Time's up!";
-    } else {
-      totalSeconds--;
-      const hrs = Math.floor(totalSeconds / 3600);
-      const mins = Math.floor((totalSeconds % 3600) / 60);
-      const secs = totalSeconds % 60;
-      document.getElementById("countdownDisplay").textContent = `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-    }
-  }, 1000);
-});
-``
+//   const countdownInterval = setInterval(function() {
+//     if (totalSeconds <= 0) {
+//       clearInterval(countdownInterval);
+//       document.getElementById("countdownDisplay").textContent = "Time's up!";
+//     } else {
+//       totalSeconds--;
+//       const hrs = Math.floor(totalSeconds / 3600);
+//       const mins = Math.floor((totalSeconds % 3600) / 60);
+//       const secs = totalSeconds % 60;
+//       document.getElementById("countdownDisplay").textContent = `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+//     }
+//   }, 1000);
+// });
+
 
 
 // random quote
-const quotes = [
-  "The best way to predict the future is to invent it. - Alan Kay",
-  "Life is 10% what happens to us and 90% how we react to it. - Charles R. Swindoll",
-  "Your time is limited, don't waste it living someone else's life. - Steve Jobs",
-  "The only way to do great work is to love what you do. - Steve Jobs",
-  "Success is not the key to happiness. Happiness is the key to success. - Albert Schweitzer"
-];
+// const quotes = [
+//   "The best way to predict the future is to invent it. - Alan Kay",
+//   "Life is 10% what happens to us and 90% how we react to it. - Charles R. Swindoll",
+//   "Your time is limited, don't waste it living someone else's life. - Steve Jobs",
+//   "The only way to do great work is to love what you do. - Steve Jobs",
+//   "Success is not the key to happiness. Happiness is the key to success. - Albert Schweitzer"
+// ];
 
-document.getElementById("newQuoteBtn").addEventListener("click", () => {
-  const randomIndex = Math.floor(Math.random() * quotes.length);
-  document.getElementById("quote").textContent = quotes[randomIndex];
-});
+// document.getElementById("newQuoteBtn").addEventListener("click", () => {
+//   const randomIndex = Math.floor(Math.random() * quotes.length);
+//   document.getElementById("quote").textContent = quotes[randomIndex];
+// });
 
 // geolocation
-document.getElementById("getLocationBtn").addEventListener("click", function() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      const lat = position.coords.latitude;
-      const lon = position.coords.longitude;
-      document.getElementById("location").textContent = `Latitude: ${lat}, Longitude: ${lon}`;
-    }, function() {
-      document.getElementById("location").textContent = "Unable to retrieve location.";
-    });
-  } else {
-    document.getElementById("location").textContent = "Geolocation is not supported by this browser.";
-  }
-});
+// document.getElementById("getLocationBtn").addEventListener("click", function() {
+//   if (navigator.geolocation) {
+//     navigator.geolocation.getCurrentPosition(function(position) {
+//       const lat = position.coords.latitude;
+//       const lon = position.coords.longitude;
+//       document.getElementById("location").textContent = `Latitude: ${lat}, Longitude: ${lon}`;
+//     }, function() {
+//       document.getElementById("location").textContent = "Unable to retrieve location.";
+//     });
+//   } else {
+//     document.getElementById("location").textContent = "Geolocation is not supported by this browser.";
+//   }
+// });
 
       </script>
       

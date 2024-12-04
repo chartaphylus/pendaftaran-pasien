@@ -23,7 +23,7 @@
     <a href="{{route('user.celender')}}" class="sidebar-link">
         <i class="bi bi-calendar-event">
         </i>
-        <span>alat bantu</span>
+        <span>location</span>
     </a>
 </li>
 <li class="sidebar-item">
