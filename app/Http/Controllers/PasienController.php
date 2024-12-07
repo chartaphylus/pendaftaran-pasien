@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Dokter;
 use App\Models\pasien;
 use Illuminate\Http\Request;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class PasienController extends Controller
 {
@@ -37,8 +38,10 @@ class PasienController extends Controller
             'tanggal' => 'required|date',
         ]);
 
+        $dokters = Dokter::all();
+
         Pasien::create($request->all());
-        return redirect()->route('pasiens.pasiens')->with('success', 'Pasien berhasil ditambahkan.');
+        return view('Dashboard.pendaftaran', compact('dokters') )->with('success', 'Pasien berhasil ditambahkan.');
     }
 
     // Menampilkan data pasien yang dipilih untuk diedit
@@ -63,15 +66,19 @@ class PasienController extends Controller
             'tanggal' => 'required|date',
         ]);
 
+        $dokters = Dokter::all();
+
         $pasien->update($request->all());
-        return redirect()->route('pasiens.pasiens')->with('success', 'Data pasien berhasil diubah.');
+        return view('Dashboard.pendaftaran', compact('dokters') )->with('success', 'Data pasien berhasil diubah.');
     }
 
     // Menghapus data pasien
     public function destroy(pasien $pasien)
     {
+
+        $dokters = Dokter::all();
         $pasien->delete();
-        return redirect()->route('pasiens.pasiens')->with('success', 'Pasien berhasil dihapus.');
+        return view('Dashboard.pendaftaran', compact('dokters') )->with('success', 'Pasien berhasil dihapus.');
     }
 
 }
